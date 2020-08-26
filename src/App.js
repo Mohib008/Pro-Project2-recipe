@@ -8,13 +8,19 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-       <AvocadoToast title="Pasta" ingredients={["Flour", "Water"]}/>
+       <AvocadoToast 
+          title="Pasta"
+          ingredients={['Flour','Water']}
+          instructions="Mix ingredients"
+          img="spaghetti.jpg"
+        />
        <Spaghetti />
        <Milkshake />
       </div>
     );
    }
-  }
+}
  
+
 
 export default App;
