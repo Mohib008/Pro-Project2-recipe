@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AvocadoToast from "./Component/avocadoToast";
 import Spaghetti from "./Component/spaghetti";
-import Milkshake from "./Component/milkshake";
+import Instructor from "./Component/instructor";
 import './App.css';
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
           img="spaghetti.jpg"
         />
        <Spaghetti />
-       <Milkshake />
+       <Instructor />
       </div>
     );
    }
