@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import './App.css';
 
 
-class Instructor extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      instructor: [
+      instructors: [
         {
           Name: "Mohib",
           hobbies: ["Coding", "sport", "Problem solving"]
@@ -23,15 +23,15 @@ class Instructor extends Component {
     setTimeout(() => {
       const randInst = Math.floor(
         Math.random() *
-        this.state.instructor.length
+        this.state.instructors.length
       );
       const hobbyIndex = Math.floor(
         Math.random() *
-        this.state.instructor[randInst].length
+        this.state.instructors[randInst].length
       );
-      const instructor = this.state.instructor.map((inst, i) => {
+      const instructors = this.state.instructors.map((inst, i) => {
         if(i === randInst) {
-          const hobbies = [ ...inst.habbies];
+          const hobbies = [ ...inst.hobbies];
           hobbies.splice(hobbyIndex, 1);
           return {
             ...inst, hobbies
@@ -39,14 +39,14 @@ class Instructor extends Component {
         }
         return inst;
       });
-      this.setState({ instructor });
+      this.setState({ instructors });
     }, 5000);
   }
 
 
 
   render() {
-    const instructor = this.state.instructor.map((instructor, index) => (
+    const instructors = this.state.instructors.map((instructor, index) => (
       <li key={index}>
         <h3>{instructor.Name}</h3>
         <h4>hobbies: {instructor.hobbies.join(", ")}</h4>
@@ -56,7 +56,7 @@ class Instructor extends Component {
     return (
       <div className="instructor">
         <ul>
-          {instructor}
+          {instructors}
         </ul>
       </div>
     )
@@ -64,4 +64,4 @@ class Instructor extends Component {
 }
 
 
-export default Instructor;
+export default App;
