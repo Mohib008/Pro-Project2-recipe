@@ -19,22 +19,24 @@ class Instructor extends Component{
                 }
             ]
         };
+        setTimeout(() => {
+            const randInst = Math.floor(
+                Math.random() *
+                this.state.instructor.length
+            );
+            const hobbyIndex = Math.floor(
+                Math.random() *
+                this.state.instructor[randInst].length
+            );
+            const instructor = this.state.instructor.slice();
+            instructor[randInst] = Object.assign({}, [randInst]);
+            instructor[randInst].habbies = instructor[randInst].habbies.slice();
+            instructor[randInst].habbies.slice(hobbyIndex, 1);
+            this.setState({instructor});
+        }, 5000);
     }
 
-    this.setState = {
-        Instructor: [
-            {
-                Name: "john", 
-                hobbies: ["this", "that", "thier"]
-            }, {
-                Name: "Ajmal", 
-                hobbies: ["this", "that", "4242"]
-            }, {
-                Name: "Shakib",
-                hobbies: ["asjkfasjf", "325", "235"]
-            }
-        ]
-    }
+  
 
     render(){
         const instructor = this.state.instructor.map((instructor, index) => (
